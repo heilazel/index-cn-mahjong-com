@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麻将胡了 · 牌型索引与术语百科</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #fae9d8 0%, #f5d6b3 100%);
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            padding: 2rem 1.2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #2e241e;
+        }
+
+        .blog-wrapper {
+            max-width: 820px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fffffffb;
+            border-radius: 28px;
+            box-shadow: 0 12px 32px rgba(160, 90, 45, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+            padding: 2.6rem 2.2rem;
+            backdrop-filter: blur(2px);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card + .card {
+            margin-top: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #4d2f1d;
+            margin-bottom: 0.4rem;
+            border-left: 6px solid #c7825a;
+            padding-left: 1rem;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7e5f48;
+            background: #f2e2d4;
+            display: inline-block;
+            padding: 0.3rem 1.2rem;
+            border-radius: 50px;
+            margin-top: 0.2rem;
+            margin-bottom: 1.8rem;
+            font-weight: 450;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            color: #3d2c22;
+            margin-bottom: 1.6rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #e1cdbc;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .blockquote-highlight {
+            background: #f9ede2;
+            border-radius: 16px;
+            padding: 1.2rem 1.6rem;
+            margin: 1.6rem 0;
+            font-style: normal;
+            border-left: 5px solid #b27650;
+            color: #3d2a1c;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .blockquote-highlight strong {
+            color: #8f5a36;
+        }
+
+        .sublist {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.4rem;
+            margin: 1.4rem 0 1rem;
+        }
+
+        .sublist li {
+            background: #f5ede6;
+            padding: 0.3rem 1rem 0.3rem 1.8rem;
+            border-radius: 40px;
+            font-size: 0.95rem;
+            position: relative;
+            color: #3f2c1e;
+        }
+
+        .sublist li::before {
+            content: "🀄";
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .inline-link {
+            color: #9d6b47;
+            font-weight: 550;
+            text-decoration: none;
+            padding: 0.1rem 0.5rem;
+            background: #f3e3d6;
+            border-radius: 24px;
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+        }
+
+        .inline-link:hover {
+            background: #dbb99f;
+            color: #2f1d12;
+            border-bottom-color: #a16d48;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        .faq-item {
+            background: #f8f1eb;
+            border-radius: 16px;
+            padding: 0.9rem 1.1rem;
+        }
+
+        .faq-item dt {
+            font-weight: 600;
+            color: #4e311f;
+            margin-bottom: 0.2rem;
+            font-size: 0.95rem;
+        }
+
+        .faq-item dd {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #5f4636;
+        }
+
+        .site-tip {
+            background: #e7d5c4;
+            border-radius: 40px;
+            padding: 0.8rem 2rem;
+            display: inline-block;
+            margin-top: 1.2rem;
+            font-size: 0.95rem;
+            color: #2f1f14;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e4d1c0;
+            margin: 1.8rem 0 1rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7c6656;
+            margin-top: 2.5rem;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 20px;
+            }
+            h1 {
+                font-size: 1.7rem;
+                padding-left: 0.8rem;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .sublist {
+                flex-direction: column;
+                gap: 0.6rem;
+            }
+            .inline-link {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="blog-wrapper">
+    <div class="card">
+        <h1>麻将胡了 · 牌型拆解与术语整理</h1>
+        <div class="subhead">日常查牌、对照番种与延伸阅读</div>
+
+        <p class="intro">
+            对于常常需要快速核对役种、规则差异或历史牌型的玩家来说，一本结构清晰的索引胜过零散搜索。<strong>麻将胡了</strong> 的定位正是这样的案头工具——用简洁的条目和归类，把分散在各地规则中的信息聚合成可查阅的参考。
+        </p>
+
+        <p>无论是国标麻将里的复合番种，还是地方玩法中的特殊和牌形，日常对局中难免遇到“这个牌型叫什么”“是否重复计番”之类的疑问。以 <a href="https://index-cn-mahjong.com" class="inline-link">麻将胡了</a> 作为查询起点，能够快速定位到对应的番种定义、牌例图示以及常见变体说明，省去多个页面来回比对的精力。</p>
+
+        <p>另一方面，不同规则体系之间的对照也是高频需求。例如“清一色”在大众麻将、竞技麻将和日本麻将中的计分差异，或者“七对子”是否包含门清限制——这些细节在索引站里往往以并排表格或注释形式呈现，适合横向对比阅读。</p>
+
+        <div class="blockquote-highlight">
+            <strong>▎ 延伸查阅提示</strong><br>
+            遇到复合役种（如“三色同刻”“混一色加断幺”）时，建议先拆解基础元素，再对照索引里的组合案例。部分条目还附带了“常见误区”说明，帮助区分易混淆牌型。
+        </div>
+
+        <p>除了番种查询，牌效率与防守判断也是许多玩家持续关注的延伸方向。索引站中收录了部分关于牌理、筋牌和读牌思路的短篇整理，虽然篇幅克制，但信息密度不低，适合在空闲时逐条翻阅。</p>
+
+        <ul class="sublist">
+            <li>国标番种速查</li>
+            <li>地方役种对照</li>
+            <li>复合牌型拆解</li>
+            <li>番数计算备忘</li>
+            <li>常见规则分歧</li>
+        </ul>
+
+        <p>如果你正在系统性地整理自己的牌谱记录，或者想对某些模糊的规则点做一次彻底梳理，那么把 <a href="https://index-cn-mahjong.com" class="inline-link">麻将胡了</a> 加入书签会是一个值得养成的习惯——它不会替你打牌，但会让你在需要准确信息时少走弯路。</p>
+
+        <hr>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <dt>番种太多记不全怎么办？</dt>
+                <dd>优先熟记常用 20 种，其余按“特殊牌型”和“组合类”分类索引，随用随查。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>地方规则差异怎么处理？</dt>
+                <dd>对照表中会标注“仅限xx规则”或“通用”，注意看条目备注即可。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>有没有牌例图解？</dt>
+                <dd>主要番种都配有简明的牌面示意，帮助你快速对应实际手牌。</dd>
+            </div>
+            <div class="faq-item">
+                <dt>适合新手还是老手？</dt>
+                <dd>提供基础解释和进阶对照，两个阶段都能找到对应内容。</dd>
+            </div>
+        </div>
+
+        <div class="site-tip">
+            🀄 日常翻查 · 对照延伸 · 索引站
+        </div>
+    </div>
+
+    <div class="footer-note">
+        内容基于通用麻将规则整理，仅供参考 · 页面风格：暖色卡片
+    </div>
+</div>
+</body>
+</html>

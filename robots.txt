@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://heilazel.github.io/index-cn-mahjong-com/sitemap.xml
